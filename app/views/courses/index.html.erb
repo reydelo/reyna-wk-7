@@ -1,0 +1,19 @@
+<table>
+  <tr>
+    <th> Course Title </th>
+    <th> Day or Night </th>
+  </tr>
+
+  <tbody>
+    <% @user.courses.each do |course| %>
+        <tr>
+        <td><%= course.title %></td>
+        <% if course.day == true %>
+        <td>Day</td>
+        <% else %>
+        <td>Night</td>
+        <% end %>
+      </tr>
+      <% end %>
+    </tbody>
+</table>
