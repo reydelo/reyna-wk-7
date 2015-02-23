@@ -7,7 +7,7 @@
   <tbody>
     <% @user.courses.each do |c| %>
         <tr>
-        <td><%= c.title %></td>
+        <td><%= link_to c.title, user_course_path(@user, c) %></td>
         <% if c.day == true %>
         <td>Day</td>
         <% else %>

@@ -29,6 +29,8 @@ class CoursesController < ApplicationController
   end
 
   def show
+    @course = Course.find(params[:id])
+    @user = User.find(params[:user_id])
   end
 
   private
