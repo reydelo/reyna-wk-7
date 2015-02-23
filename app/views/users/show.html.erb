@@ -1,4 +1,19 @@
-<%= @user.user_name %>
+<body>
+  <div class="container">
 
-<%= link_to 'Add Course', new_user_course_path(@user) %>
-<%= link_to 'Course Index', user_courses_path(@user) %>
+    <div class="page-header">
+      <div class="pull-right">
+        <a class="btn btn-info"<%= link_to 'Add Course', new_user_course_path(@user) %>
+          <a class="btn btn-info"<%= link_to 'Course Index', user_courses_path(@user) %>
+      </div>
+      <h1><%= @user.user_name %></h1>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><%= link_to 'Student', users_path %></li>
+      <li class="active"><%= @user.user_name %></li>
+    </ol>
+
+
+  </div>
+</body>
