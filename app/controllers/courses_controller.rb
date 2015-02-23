@@ -16,11 +16,19 @@ class CoursesController < ApplicationController
   end
 
   def index
-    @courses = Course.all
     @user = User.find(params[:user_id])
+    @courses = @user.courses
   end
 
   def destroy
+    @course = Course.find(params[:id])
+    @user = User.find(params[:user_id])
+    if @course.destroy
+      redirect_to user_courses_path
+    end
+  end
+
+  def show
   end
 
   private

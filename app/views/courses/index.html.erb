@@ -5,14 +5,15 @@
   </tr>
 
   <tbody>
-    <% @user.courses.each do |course| %>
+    <% @user.courses.each do |c| %>
         <tr>
-        <td><%= course.title %></td>
-        <% if course.day == true %>
+        <td><%= c.title %></td>
+        <% if c.day == true %>
         <td>Day</td>
         <% else %>
         <td>Night</td>
         <% end %>
+        <td> <%= link_to 'Delete', user_course_path(@user, c), method: :delete %></td>
       </tr>
       <% end %>
     </tbody>
